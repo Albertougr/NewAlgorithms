@@ -30,15 +30,40 @@ def remainder(arr, lens, n):
     return mul % n 
   
 
+def Max_elements(list1, N): 
+    f = [] 
+  
+    for i in range(0, N):  
+        max1 = 0
+          
+        for j in range(len(list1)):      
+            if list1[j] > max1: 
+                max1 = list1[j]; 
+                  
+        list1.remove(max1); 
+        f.append(max1) 
+          
+    return f
+  
+
 
 
 
 if __name__ == "__main__":
+    
+    
+    list1 = [22, 62, 412, 825, 12, 345, 47, 56, 140] 
+    N = 3
+      
+    # Calling the function 
+    Max_elements(list1, N) 
+    
 
     arr = [ 130, 100, 15, 5, 345, 140 ] 
     lens = len(arr) 
     n = 11
       
+
     print( remainder(arr, lens, n))  
 
 
