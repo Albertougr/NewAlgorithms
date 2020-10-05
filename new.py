@@ -48,18 +48,37 @@ def Max_elements(list1, N):
 
 
 
+def PalabrasNoComunes(A, B): 
+  
+    # count will contain all the word counts 
+    count = {} 
+      
+    # insert words of string A to hash 
+    for w in A.split(): 
+        count[w] = count.get(w, 0) + 1
+      
+    # insert words of string B to hash 
+    for w in B.split(): 
+        count[w] = count.get(w, 0) + 1
+  
+    # return required list of words 
+    return [w for w in count if count[w] == 1] 
+  
+
+
+
 
 if __name__ == "__main__":
     
     
-    list1 = [22, 62, 412, 825, 12, 345, 47, 56, 140] 
-    N = 3
+    list1 = [222, 62, 412, 825, 12, 345, 47, 56, 140] 
+    N = 4
       
     # Calling the function 
     Max_elements(list1, N) 
     
 
-    arr = [ 130, 100, 15, 5, 345, 140 ] 
+    arr = [ 1330, 100, 15, 5, 345, 140 ] 
     lens = len(arr) 
     n = 11
       
@@ -68,5 +87,12 @@ if __name__ == "__main__":
 
 
 
-    for i in range(1,10):
+    for i in range(1,14):
         print(Fibonacci_number(i))
+        
+        
+    A = "eran uno dos y tres"
+    B = "tres triste tigres eran dos"
+      
+    # Print required answer 
+    print(PalabrasNoComunes(A, B)) 
