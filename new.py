@@ -10,19 +10,20 @@ Created on Mon Oct  5 13:03:12 2020
 
 def Fibonacci_number(n):
     if n<=0:
-        print("Incorrecto")
+        print("Incorrect")
     elif n==1:
         return 0
     elif n==2:
         return 1
     else:
+        #recursive
         return Fibonacci_number(n-1)+Fibonacci_number(n-2)
  
     
  
     
 def remainder(arr, lens, n): 
-    mul = 1
+    mul = 2
   
     for i in range(lens):  
         mul = (mul * (arr[i] % n)) % n 
@@ -50,37 +51,85 @@ def Max_elements(list1, N):
 
 def PalabrasNoComunes(A, B): 
   
-    # count will contain all the word counts 
-    count = {} 
+    c = {} 
       
-    # insert words of string A to hash 
     for w in A.split(): 
-        count[w] = count.get(w, 0) + 1
+        c[w] = c.get(w, 0) + 1
       
-    # insert words of string B to hash 
     for w in B.split(): 
-        count[w] = count.get(w, 0) + 1
+        
+        c[w] = c.get(w, 0) + 1
   
-    # return required list of words 
-    return [w for w in count if count[w] == 1] 
+    return [w for w in c if c[w] == 1] 
   
 
 
+def moreK(k, str): 
+      
+    s = [] 
+      
+    text = str.split(" ") 
+      
+    for t in text: 
+        if len(t) > k: 
+              
+            s.append(t) 
+    return s 
+  
+  
+  
 
+def has_all(string) : 
+  
+    s = string.lower() 
+    v = set("aeiou") 
+  
+    s = set({}) 
+  
+    for c in s : 
+        if c in v : 
+            s.add(c) 
+        else: 
+            pass
+              
+    if len(s) == len(v) : 
+        print("good") 
+    else : 
+        print("Not good") 
+  
+  
+      
 
 if __name__ == "__main__":
     
     
-    list1 = [222, 62, 412, 825, 12, 345, 47, 56, 140] 
+    
+    
+    k2 = 3
+    str ="esto es una prueba"
+    print(moreK(k2, str))
+        
+        
+    s = "nosesitieneull"
+    has_all(s) 
+    
+    
+    
+    
+    ###################################3
+    
+    list1 = [222, 62, 412, 8252, 12, 345, 47, 56, 140] 
     N = 4
       
     # Calling the function 
     Max_elements(list1, N) 
     
 
-    arr = [ 1330, 100, 15, 5, 345, 140 ] 
+    arr = [ 1330, 100, 15, 5, 3435, 140 ] 
+    arer = [ 1330, 100, 15, 5, 3435, 140 ] 
+
     lens = len(arr) 
-    n = 11
+    n = 12
       
 
     print( remainder(arr, lens, n))  
@@ -91,8 +140,8 @@ if __name__ == "__main__":
         print(Fibonacci_number(i))
         
         
-    A = "eran uno dos y tres"
-    B = "tres triste tigres eran dos"
+    stringA = "eran uno dos y tres"
+    stringB = "tres triste tigres eran dos ??"
       
     # Print required answer 
-    print(PalabrasNoComunes(A, B)) 
+    print(PalabrasNoComunes(stringA, stringB)) 
